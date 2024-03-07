@@ -1,8 +1,8 @@
 const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
-const geocode = require("./utils/geocode");
-const forcast = require("./utils/forcast");
+const geocode = require("../src/utils/geocode");
+const forcast = require("../src/utils/forcast");
 
 const app = express();
 
