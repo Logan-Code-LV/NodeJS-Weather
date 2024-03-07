@@ -98,6 +98,7 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3005, () => {
-  console.log("Server runnin 🏃🏻‍♂️");
+const port = process.env.PORT || 3005;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
