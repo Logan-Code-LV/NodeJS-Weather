@@ -1,0 +1,58 @@
+body {
+  background-color: #f4f4f4; /* Adds a light grey background color */
+}
+
+.main-content {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the main content area */
+  background-color: #fff; /* Makes the main content area white */
+  padding: 20px; /* Adds some padding inside the main content area */
+  border-radius: 5px; /* Rounds the corners of the main content area */
+  width: 500px;
+  margin: 0 auto; /* Centers the main content area on the page */
+}
+
+form {
+  display: flex; /* Makes the form fields align horizontally */
+  justify-content: space-between; /* Adds space between the form fields */
+}
+
+form input[type="text"] {
+  flex-grow: 1; /* Makes the input field take up the remaining space */
+  margin-right: 10px; /* Adds some margin to the right of the input field */
+}
+
+button {
+  background-color: #007bff; /* Makes the button blue */
+  color: #fff; /* Makes the button text white */
+  border: none; /* Removes the default button border */
+  padding: 10px 20px; /* Adds some padding inside the button */
+  border-radius: 5px; /* Rounds the corners of the button */
+  cursor: pointer; /* Changes the cursor when hovering over the button */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darkens the button color when hovering */
+}
+
+#weatherCard {
+  display: none;
+}
+
+.card {
+  width: 500px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
