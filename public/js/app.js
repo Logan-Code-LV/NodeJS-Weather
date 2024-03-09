@@ -17,8 +17,9 @@ weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const location = search.value;
 
-  fetch(`${window.location.href}weather?address=${location}`).then(
+  fetch(`http://localhost:3005/weather?address=${location}`).then(
     (response) => {
+      console.log("🚀 ~ response", response);
       response.json().then((data) => {
         weatherCard.style.display = "block"; // Show the card
         if (data.error) {
