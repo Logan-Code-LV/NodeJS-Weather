@@ -17,24 +17,22 @@ weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const location = search.value;
 
-  fetch(`http://localhost:3005/weather?address=${location}`).then(
-    (response) => {
-      console.log("🚀 ~ response", response);
-      response.json().then((data) => {
-        weatherCard.style.display = "block"; // Show the card
-        if (data.error) {
-          locationResult.textContent = "Error: " + data.error;
-        } else {
-          locationResult.textContent = data.location;
-          forecastResult.textContent = "Forecast: " + data.forecast;
-          temperatureResult.textContent = "Temperature: " + data.temperature;
-          feelslikeResult.textContent = "Feels Like: " + data.feelslike;
-          uvIndexResult.textContent = "UV Index: " + data.uv_index;
-          humidityResult.textContent = "Humidity: " + data.humidity;
-          windSpeedResult.textContent = "Wind Speed: " + data.wind_speed;
-          windDirResult.textContent = "Wind Direction: " + data.wind_dir;
-        }
-      });
-    }
-  );
+  fetch(`/weather?address=${location}`).then((response) => {
+    console.log("🚀 ~ response", response);
+    response.json().then((data) => {
+      weatherCard.style.display = "block"; // Show the card
+      if (data.error) {
+        locationResult.textContent = "Error: " + data.error;
+      } else {
+        locationResult.textContent = data.location;
+        forecastResult.textContent = "Forecast: " + data.forecast;
+        temperatureResult.textContent = "Temperature: " + data.temperature;
+        feelslikeResult.textContent = "Feels Like: " + data.feelslike;
+        uvIndexResult.textContent = "UV Index: " + data.uv_index;
+        humidityResult.textContent = "Humidity: " + data.humidity;
+        windSpeedResult.textContent = "Wind Speed: " + data.wind_speed;
+        windDirResult.textContent = "Wind Direction: " + data.wind_dir;
+      }
+    });
+  });
 });
