@@ -14,12 +14,10 @@ const windDirResult = document.querySelector("#windDirResult");
 const weatherCard = document.querySelector("#weatherCard");
 
 weatherForm.addEventListener("submit", (e) => {
-  console.log("hit");
   e.preventDefault();
   const location = search.value;
-  console.log("🚀 ~ location", location);
 
-  fetch(`http://localhost:3005/weather?address=${location}`).then(
+  fetch(`${window.location.href}weather?address=${location}`).then(
     (response) => {
       response.json().then((data) => {
         weatherCard.style.display = "block"; // Show the card

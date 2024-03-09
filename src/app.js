@@ -1,8 +1,9 @@
 const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
-const geocode = require("../src/utils/geocode");
-const forcast = require("../src/utils/forcast");
+const geocode = require("./utils/geocode");
+const forcast = require("./utils/forcast");
+const cors = require("cors");
 
 const app = express();
 
@@ -18,6 +19,7 @@ hbs.registerPartials(partialsPath);
 
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath));
+app.use(cors());
 
 app.get("", (req, res) => {
   res.render("index", {
